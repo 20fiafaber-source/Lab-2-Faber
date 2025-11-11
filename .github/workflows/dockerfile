@@ -4,12 +4,12 @@ WORKDIR /app
 
 COPY . .
 
-RUN go build -o main .
+RUN go build -o Hello .
 
 FROM alpine:latest
 
 WORKDIR /root/
 
-COPY --from=build /app/main .
+COPY --from=build /app/Hello .
 
-CMD ["./main"]
+CMD ["./Hello"]
